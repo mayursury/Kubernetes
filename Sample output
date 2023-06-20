@@ -1,0 +1,28 @@
+# Sample output of terraform apply command:
+
+Apply complete! Resources: 26 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+private_ip_of_demo_server = "10.10.3.86"
+public_ip_of_demo_server = "13.126.103.28"
+--------------------------------------------------------------------------
+## How to connect nodes through master:
+
+* curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.23.17/2023-05-11/bin/linux/amd64/kubectl
+* chmod +x kubectl
+* mv kubectl /usr/local/bin/
+* aws configure (And put your credentials)
+* aws eks update-kubeconfig --region ap-south-1 --name ed-eks-01
+* kubectl get all
+* kubectl get nodes
+
+[root@ip-10-10-3-86 ~]# kubectl get all
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   172.20.0.1   <none>        443/TCP   38m
+[root@ip-10-10-3-86 ~]# kubectl get nodes
+NAME                                        STATUS   ROLES    AGE   VERSION
+ip-10-10-2-39.ap-south-1.compute.internal   Ready    <none>   35m   v1.27.1-eks-2f008fe
+ip-10-10-3-93.ap-south-1.compute.internal   Ready    <none>   35m   v1.27.1-eks-2f008fe
+[root@ip-10-10-3-86 ~]# 
+--------------------------------------------------------------------------------
