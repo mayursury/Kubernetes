@@ -1,0 +1,11 @@
+## Setups Involved
+
+1. Create VPC
+2. Create extra subnet for kubernetes
+3. Create EC2 instance
+4. Create security groups for kubernetes
+5. Create IAM roles
+6. Create IAM policies
+7. Attache Roles
+8. Create EKS cluster
+9. Create Node group
